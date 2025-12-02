@@ -1,4 +1,4 @@
-I couldn't decide what the name of the bot should be while developing it, so the bot's name might be referred to as either DroSStAA, DroStAV, or DStAA. DM spicyTumors if there are any problems with the code. Code is intended to be run on windows
+I couldn't decide what the name of the bot should be while developing it, so the bot's name might be referred to as either DroSStAA, DroStAV, DStAA, etc. DM spicyTumors if there are any problems with the code. Code is intended to be run on windows
 1: download Node.js onto computer
 2: right click on the folder named "drosstaa3" and click "Open in Terminal"
 3: in the command prompt that opens, type "code ." (WITHOUT THE QUOTATION MARKS)
