@@ -1,10 +1,18 @@
 const { google } = require('googleapis');
 const fs = require('fs');
 const path = require('path');
-const striptags = require("striptags"); // Remove unwanted HTML formatting
-const quotedPrintable = require("quoted-printable"); // Handles quoted-printable decoding
+const striptags = require("striptags");
+const quotedPrintable = require("quoted-printable");
 
-const TOKEN_PATH = path.join(__dirname, 'token.json');
+// Use /tmp in cloud, __dirname locally
+const TOKEN_PATH = process.env.KOYEB
+    ? path.join('/tmp', 'token.json')
+    : path.join(__dirname, 'token.json');
+
+// If TOKEN_JSON is provided via environment variable, write it to /tmp/token.json
+if (process.env.TOKEN_JSON) {
+    fs.writeFileSync(TOKEN_PATH, process.env.TOKEN_JSON);
+}
 
 // Function to request new OAuth token manually (only if needed)
 async function requestNewToken(auth) {
@@ -27,9 +35,7 @@ async function requestNewToken(auth) {
                     throw new Error("gmail.js: ##ERROR: Authentication failed: No refresh token received.");
                 }
 
-                // Ensures refresh token is stored permanently
                 fs.writeFileSync(TOKEN_PATH, JSON.stringify(tokens, null, 2));
-
                 console.log("gmail.js: ##VALIDATED: Authentication successful! Refresh token saved.");
                 rl.close();
                 resolve(auth);
@@ -51,17 +57,20 @@ async function authenticate() {
     );
 
     if (fs.existsSync(TOKEN_PATH)) {
-        const token = JSON.parse(fs.readFileSync(TOKEN_PATH, 'utf-8'));
+        let token;
+        try {
+            token = JSON.parse(fs.readFileSync(TOKEN_PATH, 'utf-8'));
+        } catch (err) {
+            console.error("gmail.js: ##ERROR: Failed to parse token.json. Raw content:", fs.readFileSync(TOKEN_PATH, 'utf-8'));
+            throw err;
+        }
+
         auth.setCredentials(token);
 
         try {
-            // Corrected method for token refresh
             const { credentials } = await auth.refreshAccessToken();
             auth.setCredentials(credentials);
-
-            // Save updated credentials to token.json
             fs.writeFileSync(TOKEN_PATH, JSON.stringify(auth.credentials, null, 2));
-
             console.log("gmail.js: ##VALIDATED: Token refreshed successfully!");
             return auth;
         } catch (error) {
@@ -73,7 +82,7 @@ async function authenticate() {
     return await requestNewToken(auth);
 }
 
-
+//#####################################################3
 
 // Helper function to extract email body recursively
 function extractEmailBody(payload) {
@@ -120,7 +129,7 @@ async function getLatestEmail(auth) {
 
         if (!response.data.messages || response.data.messages.length === 0) {
             console.log("gmail.js: ##ERROR: NO MATCHING STEAM EMAILS FOUND WITHIN LAST 5 DAYS");
-            return { subject: "No matching emails found.", body: "N/A" };
+            return { subject: "No matching emails found.", body: "No requests within last 5 days" };
         }
 
         //  Ensure we fetch the latest valid Steam email (standalone or reply)
