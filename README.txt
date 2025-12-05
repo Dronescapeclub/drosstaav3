@@ -9,17 +9,18 @@ NOTES:
 -Theres a dronescape discord account with a test server connected if you don't want to clutter the club channel testing stuff
 (email: dronescapeclub@gmail.com, password: [same as the gmail account's password] )
 -If it ain't broke don't fix it
+-KOYEB utilizes uptimerobot.com to prevent it from going into deep sleep after 1 hour
+-uptimerobot account is logged in through dronescapeclub@gmail.com github
+-check uptimerobot status at http://stats.uptimerobot.com/s7d6ztQhdv
 
 running on KOYEB:
 1:login to KOYEB using dronescapeclub@gmail.com via. signing in through Github, NOT email
     1a: email used is dronescapeclub@gmail.com, password is [same as the gmail account's password]
-2: might say "trial has ended, choose a plan" or something like that, click "manage account" near top right
-3: select "dronescapeclub1" instead of "dronescapeclub" in dropdown, then press "OK"
+2: might say "Your Koyeb Pro trial has expired" or something like that, click "manage account" near top right
+3: select "dronescapeclub1" instead of "dronescapeclub" in dropdown near the top left, then press wait
 4: click "drosstaav3" in "Overview" tab
 5: click "Redeploy" button on top right to start/restart the bot
-6: yay you did it
-
-##run through later##
+(make sure to check uptimerobot to see why it's shut down for whatever reason)
 
 How to start bot locally on VSCode:
 1: download Node.js onto computer

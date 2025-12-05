@@ -75,7 +75,7 @@ client.login(process.env.DISCORD_TOKEN).then(() => {
 });
 
 
-//makes dummy HTTP server so KOYEB doesn't scream while running program
+//makes dummy HTTP server so KOYEB doesn't scream while running web server
 const http = require('http');
 const PORT = process.env.PORT || 8000;
 
