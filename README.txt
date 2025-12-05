@@ -17,7 +17,7 @@ running on KOYEB:
 3: select "dronescapeclub1" instead of "dronescapeclub" in dropdown, then press "OK"
 4: click "drosstaav3" in "Overview" tab
 5: click "Redeploy" button on top right to start/restart the bot
-6: yay you did it!
+6: yay you did it
 
 ##run through later##
 
