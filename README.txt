@@ -4,8 +4,22 @@ on VSCode, WebStorm, etc. when running locally (on laptop, PC, all that). Experi
 
 NOTES:
 -Procfile starts with "web:" so KOYEB health checks don't scream in console
--.env, credentials.json, and token.json are "keys" to the program, DO NOT SHARE PUBLICLY.
--dont change stuff if you don't know what you're doing (hope thats obvious)
+-.env, credentials.json, and token.json are "keys" to the program & data, DO NOT SHARE PUBLICLY.
+-Don't change stuff if you don't know what you're doing (hope thats obvious)
+-Theres a dronescape discord account with a test server connected if you don't want to clutter the club channel testing stuff
+(email: dronescapeclub@gmail.com, password: [same as the gmail account's password] )
+-If it ain't broke don't fix it
+
+running on KOYEB:
+1:login to KOYEB using dronescapeclub@gmail.com via. signing in through Github, NOT email
+    1a: email used is dronescapeclub@gmail.com, password is [same as the gmail account's password]
+2: might say "trial has ended, choose a plan" or something like that, click "manage account" near top right
+3: select "dronescapeclub1" instead of "dronescapeclub" in dropdown, then press "OK"
+4: click "drosstaav3" in "Overview" tab
+5: click "Redeploy" button on top right to start/restart the bot
+6: yay you did it!
+
+##run through later##
 
 How to start bot locally on VSCode:
 1: download Node.js onto computer
