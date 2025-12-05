@@ -73,3 +73,16 @@ client.login(process.env.DISCORD_TOKEN).then(() => {
     console.error("bot.js: ##ERROR: Failed to login:", error);
     process.exit(1); //exits process to autorestart with pm2
 });
+
+
+//makes dummy HTTP server so KOYEB doesn't scream while running program
+const http = require('http');
+const PORT = process.env.PORT || 8000;
+
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot is running\n');
+}).listen(PORT, () => {
+    console.log(`Healthcheck server listening on port ${PORT}`);
+});
+

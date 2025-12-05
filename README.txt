@@ -1,4 +1,13 @@
-I couldn't decide what the name of the bot should be while developing it, so the bot's name might be referred to as either DroSStAA, DroStAV, DStAA, etc. DM spicyTumors if there are any problems with the code. Code is intended to be run on windows
+I couldn't decide what the name of the bot should be while developing it, so the bot's name might be referred to as either
+DroSStAA, DroStAV, DStAA, etc. DM spicyTumors if there are any problems with the code. Code is intended to be run on windows
+on VSCode, WebStorm, etc. when running locally (on laptop, PC, all that). Experimenting with 24/7 uptime on KOYEB.
+
+NOTES:
+-Procfile starts with "web:" so KOYEB health checks don't scream in console
+-.env, credentials.json, and token.json are "keys" to the program, DO NOT SHARE PUBLICLY.
+-dont change stuff if you don't know what you're doing (hope thats obvious)
+
+How to start bot locally on VSCode:
 1: download Node.js onto computer
 2: right click on the folder named "drosstaa3" and click "Open in Terminal"
 3: in the command prompt that opens, type "code ." (WITHOUT THE QUOTATION MARKS)
@@ -41,7 +50,9 @@ bot.js: Bot is online as DStAA#6802
 
 NOTE: IF THE COMPUTER SHUTS DOWN OR NODE.JS CANT ACCESS THE INTERNET, RUN STEP 6 IN CONSOLE TO REBOOT
 
-FRQ: The bot is destroying the world, how can i shut it off?
+
+
+Q&A: The bot is destroying the world, how can i shut it off?
                -doing Ctrl + C in the console will stop the bot from running until you do step 6 again.
 
      What are the funny values in token.json/.env?
