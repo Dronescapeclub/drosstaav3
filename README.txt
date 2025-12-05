@@ -30,7 +30,7 @@ How to start bot locally on VSCode:
 
 node -v
 npm init -y
-npm install discord.js dotenv googleapis readline fs path striptags quoted-printable pm2
+npm install discord.js dotenv googleapis readline fs path striptags quoted-printable pm2 discord-interactions
 
 
 (dont worry about any vulnerabilities that pop up, I swear it wont steal anything...)
