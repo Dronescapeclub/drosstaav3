@@ -1,3 +1,10 @@
+----------------------------------------------------------------------------------------------
+############################# OUTDATED, USE drosstaav3f INSTEAD ##############################
+----------------------------------------------------------------------------------------------
+v3 version is left for documentation, utilizes Google Oauthv2 tokens to get gmail data (requires manual reauthorization every ~2 weeks)
+
+
+
 I couldn't decide what the name of the bot should be while developing it, so the bot's name might be referred to as either
 DroSStAA, DroStAV, DStAA, etc. DM spicyTumors if there are any problems with the code. Code is intended to be run on windows
 on VSCode, WebStorm, etc. when running locally (on laptop, PC, all that). Experimenting with 24/7 uptime on KOYEB.
@@ -9,6 +16,8 @@ NOTES:
 -Theres a dronescape discord account with a test server connected if you don't want to clutter the club channel testing stuff
 (email: dronescapeclub@gmail.com, password: [same as the gmail account's password] )
 -If it ain't broke don't fix it
+
+NOT USED ANYMORE:
 -KOYEB utilizes uptimerobot.com to prevent it from going into deep sleep after 1 hour
 -uptimerobot account is logged in through dronescapeclub@gmail.com github
 -check uptimerobot status at http://stats.uptimerobot.com/s7d6ztQhdv
